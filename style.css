@@ -38,7 +38,7 @@ body{
     border: solid 1px;
     width: 600px;
     height: 600px;
-    background: url("img/original.gif");
+    background: url("/img/original.gif");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position-y: center;
@@ -51,27 +51,27 @@ body{
 }
 
 .shooter {
-    background: url("img/192-1925981_laser-cannon-space-invaders-player-sprite.png");
+    background: url("/img/192-1925981_laser-cannon-space-invaders-player-sprite.png");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
 }
 
 .invader { 
-    background: url("img/space-invaders-png-space-invaders-alien-transparent-background-png-600.png");
+    background: url("/img/space-invaders-png-space-invaders-alien-transparent-background-png-600.png");
     background-repeat: no-repeat; 
     background-size: cover;
     
 }
 
 .boom {
-    background: url("img/boom.png");
+    background: url("/img/boom.png");
     background-repeat: no-repeat; 
     background-size: cover;
 }
 
 .laser {
-    background: url("img/laser.png");
+    background: url("/img/laser.png");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
