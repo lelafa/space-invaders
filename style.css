@@ -38,7 +38,7 @@ body{
     border: solid 1px;
     width: 600px;
     height: 600px;
-    background: url("/img/original.gif");
+    background: url("https://lelafa.github.io/space-invaders/img/original.gif");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position-y: center;
