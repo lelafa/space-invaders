@@ -12,8 +12,14 @@ const startBt = document.querySelector(".game-start-button");
 
 startBt.addEventListener("click", gameStart);
 
+
 function gameStart (){
  startBt.classList.add("display-none");
+
+ function EndGameTimer() {
+  setTimeout(function(){ location.reload(); }, 4000);
+}
+
 
 //define the invaders
 const alienInvaders = [
@@ -25,8 +31,7 @@ const alienInvaders = [
   150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,
   180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,
   210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,
-  240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,
-  270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295
+  240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265
 ]
 
 
@@ -56,6 +61,8 @@ const alienInvaders = [
     const leftEdge = alienInvaders[0] % width === 0
     const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width - 1
 
+    if(!squares[currentShooterIndex].classList.contains('invader', 'gameoverdiv')) {
+
       if((leftEdge && direction === -1) || (rightEdge && direction === 1)){
         direction = width
       } else if (direction === width) {
@@ -76,26 +83,38 @@ const alienInvaders = [
       }
 
     if(squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-      resultDisplay.textContent = 'Game Over'
+      resultDisplay.textContent = 'Game Over, your score is:'
       squares[currentShooterIndex].classList.add('boom')
+      squares[currentShooterIndex].classList.remove('invader')
       clearInterval(invaderId)
+      EndGameTimer();
+      
     }
+    
+    
 
     for (let i = 0; i <= alienInvaders.length - 1; i++){
-      if(alienInvaders[i] > (squares.length - (width))){
-        resultDisplay.textContent = 'Game Over'
+      if(alienInvaders[i] > (squares.length - (width -1))){
+        resultDisplay.textContent = 'Game Over, your score is:'
         clearInterval(invaderId)
-        
+        EndGameTimer();
       }
     }
 
     //ADD LATER
     if(alienInvadersTakenDown.length === alienInvaders.length) {
-      console.log(alienInvadersTakenDown.length)
-      console.log(alienInvaders.length)
       resultDisplay.textContent = 'You Win'
       clearInterval(invaderId)
     }
+    else if(squares[currentShooterIndex].classList.contains('invader', 'gameoverdiv')){
+      resultDisplay.textContent = 'Game Over, your score is:'
+      squares[currentShooterIndex].classList.remove('gameoverdiv')
+      squares[currentShooterIndex].classList.remove('invader')
+      squares[currentShooterIndex].classList.add('boom')
+      clearInterval(invaderId)
+      EndGameTimer();
+    }
+  } 
   }
   invaderId = setInterval(moveInvaders, 500)
 
