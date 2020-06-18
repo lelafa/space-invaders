@@ -51,7 +51,7 @@ body{
 }
 
 .shooter {
-    background: url("/img/192-1925981_laser-cannon-space-invaders-player-sprite.png");
+    background: url("https://lelafa.github/space-invaders/img/192-1925981_laser-cannon-space-invaders-player-sprite.png");
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
