@@ -1,0 +1,78 @@
+
+body{
+   background-color: black;
+}
+.main{
+    margin:auto;
+    width: 600px;
+}
+.scoreboard{
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    padding: 1px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.display-none{
+    display: none;
+}
+.game-start-button{
+    position: absolute;
+    left:200px;
+    right:200px;
+    padding: 5px;
+    width: 100px;
+    background-color: white;
+    margin: auto;
+    top:48%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px;
+    width: 600px;
+    height: 600px;
+    background: url("/img/original.gif");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position-y: center;
+    border-radius: 5px;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.shooter {
+    background: url("/img/192-1925981_laser-cannon-space-invaders-player-sprite.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.invader { 
+    background: url("/img/space-invaders-png-space-invaders-alien-transparent-background-png-600.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    
+}
+
+.boom {
+    background: url("/img/boom.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.laser {
+    background: url("/img/laser.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
